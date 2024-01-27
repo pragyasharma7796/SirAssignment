@@ -1,31 +1,31 @@
 function downloader(url, cb) {
     // write a dummy impl using setTimeout to show a delay 
     console.log("download started from url");
-    setTimeout(() => {
+    return new Promise(setTimeout(() => {
         console.log("download completed");
         const  downloaddata="Dummy Content"
         cb(downloaddata)
-    }, 4000);
+    }, 4000));
     
 }
 
 function filewrite(data, cb) {
     // write a dummy impl using setTimeout to show a delay 
     console.log("writing start start to save");
-    setTimeout(() => {
+    new Promise(setTimeout(() => {
         console.log(" writing completed");
         const  filename="dummy.txt"
         cb(filename)
-    }, 2000);
+    }, 2000));
 }
 
 function uploadFile(fileName, newUrl, cb) {
      // write a dummy impl using setTimeout to show a delay 
         console.log("start upload file : "+fileName+"newurl : "+newUrl);
-     setTimeout(() => {
+     return new Promise(setTimeout(() => {
         const uploadStatus =" sucess full";
         cb(uploadStatus)
-     }, 3000);
+     }, 3000));
 }
 
 downloader("www.google.com",(dummyContent)=>{
