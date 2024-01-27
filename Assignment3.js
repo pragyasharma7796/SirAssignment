@@ -29,11 +29,11 @@ function uploadFile(fileName, newUrl, cb) {
 }
 
 downloader("www.google.com",(dummyContent)=>{
-    console.log(dummyContent)
-    filewrite("fileWrite",(filedata)=>{
-        console.log(filedata);
-        uploadFile(filedata,"drive.google.com",(uploadData)=>{
-            console.log(uploadData);
-        })
+    
+}).then(()=>{console.log(dummyContent)
+filewrite("fileWrite",(filedata)=>{
+    console.log(filedata);
+    uploadFile(filedata,"drive.google.com",(uploadData)=>{
+        console.log(uploadData);
     })
-})
+})})
